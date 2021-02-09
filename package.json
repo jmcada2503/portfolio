@@ -8,5 +8,8 @@
   "files": [
     "particles.js",
     "particles.min.js"
-  ]
+  ],
+  "dependencies": {
+    "smooth-scrollbar": "^8.6.0"
+  }
 }
