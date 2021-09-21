@@ -10,6 +10,7 @@
     "particles.min.js"
   ],
   "dependencies": {
+    "jquery-lazyload-any": "^0.3.1",
     "smooth-scrollbar": "^8.6.0"
   }
 }

@@ -1,6 +1,6 @@
 /* =============================================================================
-   HTML5 CSS Reset Minified - Eric Meyer
-   ========================================================================== */
+HTML5 CSS Reset Minified - Eric Meyer
+========================================================================== */
 
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
 body{line-height:1}
@@ -19,85 +19,338 @@ li{list-style:none}
 
 
 /* =============================================================================
-   My CSS
-   ========================================================================== */
+My CSS
+========================================================================== */
 
 /* ---- base ---- */
 
+:root {
+    --mainColor: #FFFFFF;
+    --secondColor: #E0E0E0;
+    --thirdColor: black;
+    --fourthColor: #61F2F5;
+}
+
 html,body{ 
-	width:100%;
-	height:100%;
-	background-color: #000000;
+    width:100%;
+    height:100%;
+    background-color: #000000;
 }
 
 html{
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body{
-  font:normal 75% Arial, Helvetica, sans-serif;
+    font:normal 75% Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+    width: 8px;
+}
+body::-webkit-scrollbar-thumb {
+    background: var(--secondColor);
+    border-radius: 4px;
 }
 
 canvas{
-  display:block;
-  vertical-align:bottom;
+    display:block;
+    vertical-align:bottom;
 }
 
 /* particles.js container  */
 
 #particles-js{
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  opacity: 100;
-  z-index: 1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    opacity: 100;
+    z-index: 1;
 }
 
 /* images style */
 img {
-  z-index: 0;
-}
-
-/* Settings */
-html::-webkit-scrollbar {
-  display: none;
+    z-index: 0;
 }
 
 /* Animations */
 @keyframes rotateObject {
-  100% {
-    transform: rotate(360deg);
-  }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Clases */
 .spaceObject {
-  position: fixed;
-  animation-name: rotateObject;
-  animation-duration: 100s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+    position: fixed;
+    animation-name: rotateObject;
+    animation-duration: 100s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 
 /* ID */
 #sun {
-  left: -600px;
-  bottom: -600px;
-  height: 1000px;
-  width: 1000px;
-  opacity: 20%;
+    left: -600px;
+    bottom: -600px;
+    height: 1000px;
+    width: 1000px;
+    opacity: 20%;
 }
 #earth {
-  right: -100px;
-  top: 10%;
-  height: 300px;
-  width: 300px;
-  opacity: 40%;
+    right: -100px;
+    top: 10%;
+    height: 300px;
+    width: 300px;
+    opacity: 40%;
 }
 #title {
-  position: relative;
-  padding: 150px 100px;
-  font-family: 'Poiret One', cursive;
-  font-size: 150px;
-  color: white;
+    font-family: 'Poiret One', cursive;
+    font-size: 10vw;
+    color: var(--mainColor);
+    text-align: center;
+    text-shadow: 0px 0px 15px var(--mainColor);
+    align-self: center;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 50px;
+}
+.littleSubTitle {
+    color: var(--mainColor);
+    font-size: 40px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+}
+#headerButtonsContainer {
+    display: flex;
+    width: 70%;
+    justify-content: right;
+}
+.p2Button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--secondColor);
+    border-radius: 10px;
+    background: none;
+    margin: 10px;
+    z-index: 1;
+}
+.p2TextButton {
+    color: var(--mainColor);
+    font-size: 20px;
+    padding: 10px 20px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+}
+.p2Button:hover {
+    background: var(--secondColor);
+    cursor: pointer;
+}
+.p2Button:hover > p {
+    color: var(--thirdColor);
+}
+.p1Button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0px solid var(--secondColor);
+    border-radius: 10px;
+    background: var(--secondColor);
+    margin: 10px;
+    z-index: 1;
+}
+.p1TextButton {
+    color: var(--thirdColor);
+    font-size: 20px;
+    padding: 10px 20px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+}
+.p1Button:hover {
+    cursor: pointer;
+    background: var(--fourthColor);
+}
+#responsiveMenuButton {
+    height: 30px;
+    width: 30px;
+    position: fixed;
+    visibility: hidden;
+}
+footer {
+    position: relative;
+    display: grid;
+    width: 95%;
+    height: 200px;
+    margin: 0px 2.5%;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    background: var(--secondColor);
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    align-content: center;
+}
+.text {
+    font-family: "Raleway", sans-serif;
+    font-size: 1.5vw;
+    color: rgb(100, 100, 100);
+}
+.footerText {
+    color: var(--thirdColor);
+    opacity: 60%;
+}
+.listItem {
+    margin: 0px 20px;
+}
+#mainInfoContainer {
+    display: grid;
+    grid-template-rows: repeat(1fr, 4);
+    grid-template-columns: 1fr;
+    margin: 0px auto 50px auto;
+    height: 87vh;
+}
+.subtitle {
+    position: relative;
+    font-family: 'Poiret One', cursive;
+    font-size: 3vw;
+    color: var(--mainColor);
+    text-align: left;
+    margin: 0px;
+    text-shadow: 0px 0px 15px var(--mainColor);
+}
+#scrollDownCall {
+    height: 80px;
+    width: 80px;
+    justify-self: center;
+    opacity: 60%;
+    transform: scale(1.2, 1);
+    align-self: end;
+    opacity: 0%;
+}
+#socialMediaContainer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 50px;
+}
+.socialMediaButton {
+    height: 50px;
+    width: 50px;
+    opacity: 60%;
+}
+#projectsContainer {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    margin: 200px 0px;
+}
+.card {
+    position: absolute;
+    height: 500px;
+    width: 700px;
+    transform: translate(calc(-50% - 10px), 0px);
+}
+.cardBackground {
+    position: relative;
+    display: grid;
+    height: 90%;
+    width: 90%;
+    left: 5%;
+    top: 5%;
+    background: var(--mainColor);
+    z-index: 1;
+    box-shadow: 20px 20px 0px var(--secondColor);
+    border-radius: 40px;
+    grid-template-rows: 30% 45% 25%;
+    grid-template-columns: 1fr;
+    justify-content: center;
+}
+.cardBlur {
+    position: absolute;
+    background-color: var(--thirdColor);
+    opacity: 60%;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+.cardTitle {
+    font-family: "Raleway", sans-serif;
+    font-size: 40px;
+    color: var(--thirdColor);
+    opacity: 40%;
+    font-weight: 800;
+    padding: 20px 10%;
+    text-align: center;
+
+}
+.cardInfo {
+    display: flex;
+    width: 90%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    border-radius: 30px;
+    box-shadow: 10px 10px 0px var(--thirdColor);
+    align-items: center;
+    align-self: start;
+    justify-self: center;
+}
+.cardText {
+    color: var(--mainColor);
+    font-size: 25px;
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+    padding: 0px 20px;
+}
+.cardButton {
+    display: flex;
+    width: 40%;
+    background: rgba(0,0,0,0.4);
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    align-self: center;
+    border-radius: 20px;
+    box-shadow: 10px 10px 0px var(--thirdColor);
+}
+.cardButton:hover {
+    background: var(--fourthColor);
+    cursor: pointer;
+}
+.cardButton:hover > p {
+    color: var(--thirdColor);
+}
+.arrowButton {
+    position: absolute;
+    color: var(--mainColor);
+    font-family: "Raleway", sans-serif;
+    font-size: 4vw;
+    transform: translate(0px, -50%);
+    font-weight: 600;
+    top: 250px;
+    user-select: none;
+    opacity: 0;
+}
+.arrowButton:hover {
+    cursor: pointer;
+    color: var(--fourthColor);
+}
+#leftArrowButton {
+    right: calc(50% + 350px);
+}
+#rightArrowButton {
+    left: calc(50% + 350px);
+}
+#footerTextContainer {
+    display: grid;
+    justify-content: left;
+    align-content: center;
+    margin: 50px;
 }

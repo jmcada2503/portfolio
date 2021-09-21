@@ -1,0 +1,118 @@
+@media only screen and (max-width: 1200px) {
+    #projectsContainer {
+        width: calc(100% + 200px);
+        transform: translate(-100px);
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    #headerButtonsContainer {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+        position: fixed;
+        width: 90%;
+        height: 100%;
+        top: 0px;
+        right: -90%;
+        background: var(--secondColor);
+        z-index: 5;
+        overflow-y: auto;
+        transition: right 500ms;
+    }
+    #headerButtonsContainer > div {
+        background: none;
+    }
+    #headerButtonsContainer > div > p {
+        color: var(--thirdColor);
+        font-size: 8vw;
+    }
+    .littleSubTitle {
+        font-size: 6vw;
+    }
+    header {
+        margin: 20px 5%;
+    }
+    #responsiveMenuButton {
+        visibility: visible;
+        position: relative;
+    }
+    #headerButtonsContainer > .p1Button {
+        grid-row: 1/2;
+    }
+    #headerButtonsContainer > .p1Button > p {
+        text-decoration: underline;
+        text-decoration-style: wavy;
+        text-decoration-thickness: 2px;
+    }
+    .subtitle {
+        font-size: 4.5vw;
+    }
+    #mainInfoContainer > .subtitle {
+        width: 50% !important;
+    }
+    #mainInfoContainer {
+        grid-template-rows: repeat(1fr, 3);
+        height: 50vh;
+    }
+    footer {
+        grid-template-rows: 50% 50%;
+        grid-template-columns: 1fr;
+    }
+    #socialMediaContainer {
+        margin: 50px 15%;
+    }
+    #projectsContainer {
+        width: calc(100% + 700px);
+        transform: translate(-350px);
+        margin: 0px;
+        height: 700px;
+    }
+    .card {
+        width: 80vw;
+        height: 100vw;
+        max-height: 600px;
+        transform: translate(calc(-50% - 5px))
+    }
+    .cardTitle {
+        font-size: 5vw;
+    }
+    .cardText {
+        font-size: 3vw;
+    }
+    #leftArrowButton {
+        right: calc(50% + 40vw);
+    }
+    #rightArrowButton {
+        left: calc(50% + 40vw);
+    }
+    .arrowButton {
+        top: 300px;
+    }
+    .footerText {
+        font-size: 3vw;
+        text-align: center;
+    }
+    #footerTextContainer {
+        margin: 0px 50px;
+        height: 100%;
+    }
+    .cardBackground {
+        box-shadow: 10px 10px 0px var(--secondColor);
+    }
+    #scrollDownCall {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .arrowButton {
+        top: 50vw;
+        justify-self: center;
+        align-self: center;
+    }
+    #projectsContainer {
+        height: 120vw;
+    }
+}

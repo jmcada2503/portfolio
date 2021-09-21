@@ -9,8 +9,8 @@ http.createServer(function(req, res) {
         res.end(fs.readFileSync("./index.html"));
     }
     else if (req.url.match(/.css$/)) {
-        res.writeHead(200, {"content-type":"text/css;charset=UTF-8"});
-        res.end(fs.readFileSync(path.join(__dirname, "public", req.url)));
+            res.writeHead(200, {"content-type":"text/css;charset=UTF-8"});
+            res.end(fs.readFileSync(path.join(__dirname, "public", req.url)));
     }
     else if (req.url.match(/.js$/)) {
         res.writeHead(200, {"content-type":"text/js;charset=UTF-8"});
@@ -25,6 +25,6 @@ http.createServer(function(req, res) {
         res.end("ERROR 404. No se reconoce el archivo especificado.;")
     }
 
-}).listen(3000);
+}).listen(3000, "0.0.0.0");
 
 console.log("Servidor funcionando...")
