@@ -25,7 +25,7 @@ var projects = [
 ]
 
 $(document).ready(function() {
-    blindDownScroll()
+    blinkDownScroll()
 
     // Open menu button
     $("#responsiveMenuButton").on("click", function() {
@@ -50,39 +50,41 @@ $(document).ready(function() {
     // Projects info
     $("#projectsLazyLoads").lazyload({treshold: 0, load: function() {
         loadFirstProjects()
-        $(".arrowButton").animate({
-            opacity: 1
-        }, 500)
-        $($(".card")[1]).animate({
-            opacity: 1
-        }, 1000)
-        $($(".card")[0]).animate({
-            left: "-150px"
-        }, 500)
-        $($(".card")[2]).animate({
-            left: ($("#projectsContainer").width()+150).toString() + "px"
-        }, 500, function() {
-            $(".card")[2].style.left = "calc(100% + 150px)"
-        })
+        setTimeout(function() {
+            $(".arrowButton").animate({
+                opacity: 1
+            }, 500)
+            $($(".card")[1]).animate({
+                opacity: 1
+            }, 1000)
+            $($(".card")[0]).animate({
+                left: "-150px"
+            }, 500)
+            $($(".card")[2]).animate({
+                left: ($("#projectsContainer").width()+150).toString() + "px"
+            }, 500, function() {
+                $(".card")[2].style.left = "calc(100% + 150px)"
+            })
 
-        // Arrow buttons function
-        $("#rightArrowButton").on("click", rightArrowFunction)
-        $("#leftArrowButton").on("click", leftArrowFunction)
+            // Arrow buttons function
+            $("#rightArrowButton").on("click", rightArrowFunction)
+            $("#leftArrowButton").on("click", leftArrowFunction)
 
-        // Slide gestures for projects
-        $("#projectsContainer")[0].addEventListener("touchstart", function(e) {
-            touchMove = [0, 0]
-            lastTouch = [e.touches[0].pageX, e.touches[0].pageY]
-            $("#projectsContainer")[0].addEventListener("touchmove", onTouchMove)
-        })
-        $("#projectsContainer")[0].addEventListener("touchend", function(e) {
-            if (touchMove[0] <= -100) {
-                $("#rightArrowButton").click()
-            }
-            else if (touchMove[0] >= 100) {
-                $("#leftArrowButton").click()
-            }
-        })
+            // Slide gestures for projects
+            $("#projectsContainer")[0].addEventListener("touchstart", function(e) {
+                touchMove = [0, 0]
+                lastTouch = [e.touches[0].pageX, e.touches[0].pageY]
+                $("#projectsContainer")[0].addEventListener("touchmove", onTouchMove)
+            })
+            $("#projectsContainer")[0].addEventListener("touchend", function(e) {
+                if (touchMove[0] <= -100) {
+                    $("#rightArrowButton").click()
+                }
+                else if (touchMove[0] >= 100) {
+                    $("#leftArrowButton").click()
+                }
+            })
+        }, 200);
     }})
 })
 
@@ -182,13 +184,13 @@ function onTouchMove(e) {
     lastTouch = [e.touches[0].pageX, e.touches[0].pageY]
 }
 
-var blindDownScroll = function() {
+var blinkDownScroll = function() {
     $("#scrollDownCall").animate({
         opacity: "100%"
     }, 1000, function() {
         $("#scrollDownCall").animate({
             opacity: "50%"
-        }, 1000, blindDownScroll)
+        }, 1000, blinkDownScroll)
     })
 }
 
@@ -266,4 +268,33 @@ function createCard(next) {
     card.appendChild(blur)
 
     return card
+}
+
+// Menu buttons functions
+function hideResponsiveMenu() {
+    if ($("#responsiveMenuButton").css("visibility") == "visible") {
+        $("#headerButtonsContainer")[0].style.right = "-90%"
+        $("body")[0].style.overflowY = "auto"
+    }
+}
+
+function seeProjects() {
+    let pos;
+    try {
+        pos = $("#projectsLazyLoads").offset().top;
+    }
+    catch (e) {
+        pos = $("#projectsContainer").offset().top-200;
+    }
+    $("html, body").animate({
+        scrollTop: pos
+    }, 1000);
+    hideResponsiveMenu();
+}
+
+function seeContactInfo() {
+    $("html, body").animate({
+        scrollTop: $("footer").offset().top
+    }, 1000);
+    hideResponsiveMenu();
 }
