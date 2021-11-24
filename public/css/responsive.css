@@ -104,6 +104,19 @@
         height: 50px;
         width: 50px;
     }
+    #generalInfoContainer {
+        font-size: 4vw;
+    }
+    #skillsInfoContainer {
+        width: 90%;
+        margin: 0px 10%;
+    }
+    .skillsList {
+        font-size: 3.5vw;
+    }
+    .experiencePercentage {
+        font-size: 2.5vw;
+    }
 }
 
 @media only screen and (max-width: 600px) {

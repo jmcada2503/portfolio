@@ -27,6 +27,9 @@ var projects = [
 $(document).ready(function() {
     blinkDownScroll()
 
+    //Wow animations
+    new WOW().init();
+
     // Open menu button
     $("#responsiveMenuButton").on("click", function() {
         $("#headerButtonsContainer")[0].style.right = "0px"

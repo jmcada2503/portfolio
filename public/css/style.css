@@ -354,3 +354,82 @@ footer {
     align-content: center;
     margin: 50px;
 }
+#generalInfoContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2vw;
+    color: var(--mainColor);
+    text-align: center;
+    width: 80%;
+    height: 100vh;
+    margin: 0px 10%;
+}
+.textLink:hover {
+    cursor: pointer;
+    color: var(--fourthColor);
+}
+.textLink {
+    font-weight: bolder;
+    text-decoration: underline;
+}
+#skillsContainer {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#skillsInfoContainer {
+    position: relative;
+    display: grid;
+    width: 60%;
+    margin: 0px 20%;
+    grid-template-rows: 10% 90%;
+    grid-template-columns: 30% 70%;
+    row-gap: 50px;
+}
+.skillsList {
+    position: relative;
+    color: var(--mainColor);
+    font-family: 'Raleway', sans-serif;
+    font-size: 2vw;
+    list-style-type: circle;
+    grid-row: 2;
+    display: grid;
+    height: 100%;
+    grid-template-rows: repeat(10, 1fr);
+    align-items: center;
+    animation-duration: 1s;
+}
+#experienceContainer {
+    position: relative;
+    display: grid;
+    height: 100%;
+    grid-template-rows: repeat(10, 1fr);
+    align-items: center;
+    justify-items: right;
+    animation-duration: 1s;
+}
+.experienceBar {
+    position: relative;
+    height: 6px;
+    border-radius: 3px;
+    background-color: var(--mainColor);
+}
+.experienceInfo {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: right;
+}
+.experiencePercentage {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1vw;
+    color: var(--mainColor);
+    margin-right: 10px;
+}

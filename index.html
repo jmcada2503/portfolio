@@ -4,6 +4,8 @@
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/jquery.lazyload-any.js"></script>
+    <script src="https://wowjs.uk/dist/wow.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -49,11 +51,13 @@
         <img src="img/downArrow.png" id="scrollDownCall">
     </div>
 
-    <div style="height: 1000px">
+    <div id="generalInfoContainer">
+        <p class="wow animate__zoomIn" style="animation-duration: 1s">Actualmente estudiante de ingeniería de sistemas e informática en la Universidad Nacional de Colombia. A lo largo de los últimos años he estado estudiando diferentes tecnologías para desarrollo web, por lo tanto he desarrollado diferentes <a class="textLink" onclick="seeProjects()">proyectos</a> que puedes encontrar si sigues scrolleando . . .</p>
     </div>
 
     <div id="projectsLazyLoads" style="height: 700px">
         <!--
+        <div style="position: relative; height: auto">
         <div id="projectsContainer">
             <p class="arrowButton" id="leftArrowButton">&lt;</p>
             <p class="arrowButton" id="rightArrowButton">&gt;</p>
@@ -97,13 +101,76 @@
                 <div class="cardBlur"></div>
             </div>
         </div>
+        </div>
         -->
+    </div>
+</div>
+
+<div id="skillsContainer">
+    <div id="skillsInfoContainer">
+        <p class="subtitle wow animate__fadeInDownBig" style="font-weight: bold; animation-duration: 1s;">Habilidades</p>
+        <div class="skillsList wow animate__fadeInLeft">
+            <p>⦁ &nbsp;Python</p>
+            <p>⦁ &nbsp;Django</p>
+            <p>⦁ &nbsp;NodeJs</p>
+            <p>⦁ &nbsp;JavaScript</p>
+            <p>⦁ &nbsp;HTML</p>
+            <p>⦁ &nbsp;CSS</p>
+            <p>⦁ &nbsp;ElectronJs</p>
+            <p>⦁ &nbsp;MySQL</p>
+            <p>⦁ &nbsp;MongoDB</p>
+            <p>⦁ &nbsp;Git</p>
+        </div>
+
+        <p class="subtitle wow animate__fadeInDownBig" style="font-weight: bold; text-align: right; animation-duration: 1s;">Experiencia</p>
+        <div id="experienceContainer" class="wow animate__fadeInRight">
+            <div class="experienceInfo">
+                <p class="experiencePercentage">95</p>
+                <div class="experienceBar" style="width: 95%"></div>
+            </div>
+            <div class="experienceInfo">
+                <p class="experiencePercentage">70</p>
+                <div class="experienceBar" style="width: 70%"></div>
+            </div>
+            <div class="experienceInfo">
+                <p class="experiencePercentage">60</p>
+                <div class="experienceBar" style="width: 60%"></div>
+            </div>
+            <div class="experienceInfo">
+                <p class="experiencePercentage">80</p>
+                <div class="experienceBar" style="width: 80%"></div>
+            </div>
+            <div class="experienceInfo">
+                <p class="experiencePercentage">75</p>
+                <div class="experienceBar" style="width: 75%"></div>
+            </div>
+            <div class="experienceInfo">
+                <p class="experiencePercentage">70</p>
+                <div class="experienceBar" style="width: 70%"></div>
+            </div>
+            <div class="experienceInfo">
+                <p class="experiencePercentage">50</p>
+                <div class="experienceBar" style="width: 50%"></div>
+            </div>
+            <div class="experienceInfo">
+                <p class="experiencePercentage">85</p>
+                <div class="experienceBar" style="width: 85%"></div>
+            </div>
+            <div class="experienceInfo">
+                <p class="experiencePercentage">65</p>
+                <div class="experienceBar" style="width: 65%"></div>
+            </div>
+            <div class="experienceInfo">
+                <p class="experiencePercentage">60</p>
+                <div class="experienceBar" style="width: 60%"></div>
+            </div>
+        </div>
     </div>
 </div>
 
 <footer>
     <div id="footerTextContainer">
-        <p class="text footerText">Estudiante de ingeniería de sistemas e informática en la Universidad Nacional de Colombia</p>
+        <p class="text footerText">Si quieres ponerte en contacto conmigo puedes encontrarme en estas redes sociales</p>
     </div>
     <div id="socialMediaContainer">
         <a href="https://github.com/jmcada2503" target="_blank">
