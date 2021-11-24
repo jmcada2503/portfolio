@@ -3,24 +3,19 @@ var lastTouch
 var projectsIndex = 0
 var projects = [
 {
-"title": "CENTRO EDUCATIVO MUNDO DE JUEGOS 1",
-"description": "Esta página web fué desarrollada para un establecimiento educativo, con el objetivo de dar a conocer su propósito, misión, visión, y otras características de la institución.",
-"link": "https://mundodejuegos.co"
-},
-{
 "title": "POMODORO TIMER",
 "description": "Este proyecto se trata de un temporizador que te puede ayudar a usar la técnica de Pomodoro, pero además cuenta el tiempo extra de trabajo y lo agrega como tiempo extra al descanso, manteniendo la propoción de pomodoro ( 5:1 )",
 "link": "https://jmcada2503.github.io/PomodoroTimer"
 },
 {
-"title": "CENTRO EDUCATIVO MUNDO DE JUEGOS 3",
-"description": "Esta página web fué desarrollada para un establecimiento educativo, con el objetivo de dar a conocer su propósito, misión, visión, y otras características de la institución. 3",
+"title": "CENTRO EDUCATIVO MUNDO DE JUEGOS",
+"description": "Esta página web fué desarrollada para un establecimiento educativo, con el objetivo de dar a conocer su propósito, misión, visión, y otras características de la institución.",
 "link": "https://mundodejuegos.co"
 },
 {
-"title": "CENTRO EDUCATIVO MUNDO DE JUEGOS 4",
-"description": "Esta página web fué desarrollada para un establecimiento educativo, con el objetivo de dar a conocer su propósito, misión, visión, y otras características de la institución. 4",
-"link": "https://mundodejuegos.co"
+"title": "GESTIÓN DOCUMENTAL",
+"description": "Este proyecto hace parte de la \"Misión TIC 2020\", y se trata de un sitio web que permite la recopilación, evaluación y modificación de la información documental de los empleados de una empresa.",
+"link": "https://jmcada.pythonanywhere.com/"
 }
 ]
 
