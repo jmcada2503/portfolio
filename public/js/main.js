@@ -28,7 +28,7 @@ $(document).ready(function() {
     blinkDownScroll()
 
     //Wow animations
-    new WOW().init();
+    new WOW({callback: revealFunction, live: true}).init();
 
     // Open menu button
     $("#responsiveMenuButton").on("click", function() {
@@ -51,8 +51,14 @@ $(document).ready(function() {
     })
 
     // Projects info
-    $("#projectsLazyLoads").lazyload({treshold: 0, load: function() {
+    $("#projectsLazyLoads").lazyload({treshold: 500, load: function() {
         loadFirstProjects()
+    }})
+})
+
+// Custom animations
+function revealFunction(e) {
+    if (e.id == "projectsContainer") {
         setTimeout(function() {
             $(".arrowButton").animate({
                 opacity: 1
@@ -88,8 +94,8 @@ $(document).ready(function() {
                 }
             })
         }, 200);
-    }})
-})
+    }
+}
 
 var rightArrowFunction = function() {
     $("#rightArrowButton").off("click", rightArrowFunction)
@@ -298,6 +304,13 @@ function seeProjects() {
 function seeContactInfo() {
     $("html, body").animate({
         scrollTop: $("footer").offset().top
+    }, 1000);
+    hideResponsiveMenu();
+}
+
+function seeSkills() {
+    $("html, body").animate({
+        scrollTop: $("#skillsInfoContainer").offset().top
     }, 1000);
     hideResponsiveMenu();
 }
