@@ -4,13 +4,13 @@ var projectsIndex = 0
 var projects = [
 {
 "title": "CENTRO EDUCATIVO MUNDO DE JUEGOS 1",
-"description": "Esta página web fué desarrollada para un establecimiento educativo, con el objetivo de dar a conocer su propósito, misión, visión, y otras características de la institución. 1",
+"description": "Esta página web fué desarrollada para un establecimiento educativo, con el objetivo de dar a conocer su propósito, misión, visión, y otras características de la institución.",
 "link": "https://mundodejuegos.co"
 },
 {
-"title": "CENTRO EDUCATIVO MUNDO DE JUEGOS 2",
-"description": "Esta página web fué desarrollada para un establecimiento educativo, con el objetivo de dar a conocer su propósito, misión, visión, y otras características de la institución. 2",
-"link": "https://mundodejuegos.co"
+"title": "POMODORO TIMER",
+"description": "Este proyecto se trata de un temporizador que te puede ayudar a usar la técnica de Pomodoro, pero además cuenta el tiempo extra de trabajo y lo agrega como tiempo extra al descanso, manteniendo la propoción de pomodoro ( 5:1 )",
+"link": "https://jmcada2503.github.io/PomodoroTimer"
 },
 {
 "title": "CENTRO EDUCATIVO MUNDO DE JUEGOS 3",
