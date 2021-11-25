@@ -267,7 +267,7 @@ footer {
     box-shadow: 20px 20px 0px var(--secondColor);
     border-radius: 40px;
     grid-template-rows: 30% 45% 25%;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
 }
 .cardBlur {
@@ -288,7 +288,7 @@ footer {
     font-weight: 800;
     padding: 20px 10%;
     text-align: center;
-
+    grid-column: 1/3;
 }
 .cardInfo {
     display: flex;
@@ -300,6 +300,7 @@ footer {
     align-items: center;
     align-self: start;
     justify-self: center;
+    grid-column: 1/3;
 }
 .cardText {
     color: var(--mainColor);
@@ -310,7 +311,7 @@ footer {
 }
 .cardButton {
     display: flex;
-    width: 40%;
+    width: 60%;
     background: rgba(0,0,0,0.4);
     justify-self: center;
     justify-content: center;
@@ -390,6 +391,7 @@ footer {
     grid-template-rows: 10% 90%;
     grid-template-columns: 30% 70%;
     row-gap: 50px;
+    margin-bottom: 100px;
 }
 .skillsList {
     position: relative;
@@ -432,4 +434,19 @@ footer {
     font-size: 1vw;
     color: var(--mainColor);
     margin-right: 10px;
+}
+#footerSubtitle {
+    position: absolute;
+    width: 80%;
+    text-align: right;
+    font-size: 4vw;
+    animation-duration: 1s;
+    right: 10%;
+    top: calc(-4vw - 20px);
+}
+#projectsSubtitle {
+    width: 100%;
+    text-align: center;
+    animation-duration: 1s;
+    font-size: 4vw;
 }

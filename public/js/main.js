@@ -5,17 +5,20 @@ var projects = [
 {
 "title": "POMODORO TIMER",
 "description": "Este proyecto se trata de un temporizador que te puede ayudar a usar la técnica de Pomodoro, pero además cuenta el tiempo extra de trabajo y lo agrega como tiempo extra al descanso, manteniendo la propoción de pomodoro ( 5:1 )",
-"link": "https://jmcada2503.github.io/PomodoroTimer"
+"link": "https://jmcada2503.github.io/PomodoroTimer",
+"github": "https://github.com/jmcada2503/PomodoroTimer"
 },
 {
 "title": "CENTRO EDUCATIVO MUNDO DE JUEGOS",
 "description": "Esta página web fué desarrollada para un establecimiento educativo, con el objetivo de dar a conocer su propósito, misión, visión, y otras características de la institución.",
-"link": "https://mundodejuegos.co"
+"link": "https://mundodejuegos.co",
+"github": "https://github.com/jmcada2503/MundoDeJuegos"
 },
 {
 "title": "GESTIÓN DOCUMENTAL",
 "description": "Este proyecto hace parte de la \"Misión TIC 2020\", y se trata de un sitio web que permite la recopilación, evaluación y modificación de la información documental de los empleados de una empresa.",
-"link": "https://jmcada.pythonanywhere.com/"
+"link": "https://jmcada.pythonanywhere.com/",
+"github": "https://github.com/jmcada2503/gestionDocumental"
 }
 ]
 
@@ -199,21 +202,22 @@ var blinkDownScroll = function() {
 }
 
 function loadFirstProjects() {
-    for (let i=0; i<=3; i++) {
+    for (let i=0; i<3; i++) {
         $($(".card")[i]).find(".cardTitle").text(projects[i].title)
         $($($(".card")[i]).find(".cardText")[0]).text(projects[i].description)
-        $($(".card")[i]).find(".cardButton").attr("href", projects[i].link)
+        $($($(".card")[i]).find(".cardButton")[0]).attr("href", projects[i].link)
+        $($($(".card")[i]).find(".cardButton")[1]).attr("href", projects[i].github)
     }
 }
 
 function createCard(next) {
     let info
     if (next) {
-        if (projectsIndex+3 >= projects.length) {
-            info = projects[(projectsIndex+3)-projects.length]
+        if (projectsIndex+2 >= projects.length) {
+            info = projects[(projectsIndex+2)-projects.length]
         }
         else {
-            info = projects[projectsIndex+3]
+            info = projects[projectsIndex+2]
         }
         if (projectsIndex+1 > projects.length) {
             projectsIndex = (projectsIndex+1)-projects.length
@@ -262,11 +266,22 @@ function createCard(next) {
     button.href = info.link
     button.target = "_blank"
 
+    let button2 = document.createElement("a")
+    button2.className = "cardButton"
+    button2.href = info.github
+    button2.target = "_blank"
+
     let buttonText = document.createElement("p")
     buttonText.className = "p1TextButton cardText"
     $(buttonText).text("VER")
     button.appendChild(buttonText)
     background.appendChild(button)
+
+    let button2Text = document.createElement("p")
+    button2Text.className = "p1TextButton cardText"
+    $(button2Text).text("GITHUB")
+    button2.appendChild(button2Text)
+    background.appendChild(button2)
 
     card.appendChild(background)
     card.appendChild(blur)
